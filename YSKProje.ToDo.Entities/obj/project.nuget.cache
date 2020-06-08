@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e4gVw0MYx8ucNJ8CrvmoNHiYrKJS4m5DxT6CWsaPzsHe2MCcUVq9YmtbDZADQCoBByqJ6LSurzW+/iRyapMcRw==",
+  "dgSpecHash": "Bae1DjPWQFhpEBEL97nE1wRd6b+4hSb1SlbPNVIgpP9gFYSXFfbifvl//XjphO/q90RCMS8Ul+O40ImUEE8oAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Entities\\YSKProje.ToDo.Entities.csproj",
+  "projectFilePath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Entities\\YSKProje.ToDo.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.4\\microsoft.aspnetcore.cryptography.internal.3.1.4.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.4\\microsoft.aspnetcore.cryptography.keyderivation.3.1.4.nupkg.sha512",

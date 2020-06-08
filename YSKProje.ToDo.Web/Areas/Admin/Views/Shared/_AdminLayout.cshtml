@@ -9,7 +9,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
 
@@ -18,12 +18,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>İş Takip</title>
 
     <!-- Bootstrap core CSS -->
     <link href="~/lib/bootswatch/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="~/lib/template-css/simple-sidebar.css" rel="stylesheet" />
+    <link href="~/lib/fontAwesome/css/all.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -31,23 +33,25 @@
     <div class="d-flex" id="wrapper">
 
         <!-- Sidebar -->
-        <div class="border-right" id="sidebar-wrapper">
+        <div class="border border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Admin Sayfası</div>
             <div class="list-group list-group-flush">
-                <a asp-action="Index" asp-controller="Gorev" class="list-group-item list-group-item-action @(active=="gorev"?"active":"")">Görev İşlemleri</a>
-                <a asp-action="Index" asp-controller="Aciliyet" class="list-group-item list-group-item-action  @(active=="aciliyet"?"active":"")">Aciliyet İşlemleri</a>
-                <a asp-action="Index" asp-controller="IsEmri" class="list-group-item list-group-item-action  @(active=="isemri"?"active":"")">İş Emirleri</a>
-                <a href="#" class="list-group-item list-group-item-action ">Events</a>
-                <a href="#" class="list-group-item list-group-item-action ">Profile</a>
-                <a href="#" class="list-group-item list-group-item-action ">Status</a>
+                <a asp-action="Index" asp-controller="Gorev" class="list-group-item list-group-item-action @(active=="gorev"?"active":"")"><i class="fas fa-tasks mr-2"></i>Görev İşlemleri</a>
+                <a asp-action="Index" asp-controller="Aciliyet" class="list-group-item list-group-item-action  @(active=="aciliyet"?"active":"")"><i class="fas fa-exclamation mr-2"></i>Aciliyet İşlemleri</a>
+                <a asp-action="Index" asp-controller="IsEmri" class="list-group-item list-group-item-action  @(active=="isemri"?"active":"")"><i class="fas fa-file-alt mr-2"></i>İş Emirleri</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-pie mr-2"></i>Grafikler</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-area mr-2"></i>İstatistikler</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-bell mr-2"></i>Bildirimler</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="far fa-id-badge mr-2"></i>Profilim</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-file-alt mr-2"></i>Çıkış Yap</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <nav class="navbar navbar-expand-lg navbar-light border border-bottom">
+                <button class="btn btn-outline-primary btn-group-sm" id="menu-toggle"><i class="fas fa-exchange-alt mr-2"></i>Menü</button>
 
                 @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -87,7 +91,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="~/lib/twitter-bootstrap/jquery/jquery.min.js"></script>
     <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="~/lib/fontAwesome/js/all.min.js"></script>
     @RenderSection("JavaScript",false)
 
     <!-- Menu Toggle Script -->

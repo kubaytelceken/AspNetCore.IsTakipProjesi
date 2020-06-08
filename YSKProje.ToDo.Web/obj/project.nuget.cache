@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "thPNW+nRCJt1gkAs0+Zc+wQqegKjUTKn2sDm5gMzMylJcrsDkg17so2Arz/ybSkl2+KL727LlAxXcESckGjqdg==",
+  "dgSpecHash": "7/w0y4tmF4J1i0NukvYMekyZGVKVT/CxdSnLnWv2QBnf9DucUWdXe9ELIv7TgtbMCOi9lV7C8pTbDpVHwNSWLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
+  "projectFilePath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

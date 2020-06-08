@@ -24,7 +24,12 @@
     {
       "library": "jquery-validation-unobtrusive@3.2.11",
       "destination": "wwwroot/lib/jqueryUnob",
-      "files": ["jquery.validate.unobtrusive.min.js"]
+      "files": [ "jquery.validate.unobtrusive.min.js" ]
+    },
+    {
+      "library": "font-awesome@5.12.0-2",
+      "destination": "wwwroot/lib/fontAwesome",
+      "files": ["css/all.min.css","js/all.min.js"]
     }
   ]
 }

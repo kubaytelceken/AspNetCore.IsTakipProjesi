@@ -5859,11 +5859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj",
+      "projectUniqueName": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj",
       "projectName": "YSKProje.ToDo.Business",
-      "projectPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj",
+      "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj",
       "packagesPath": "C:\\Users\\Kubay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Business\\obj\\",
+      "outputPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kubay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5879,8 +5879,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj"
+            "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj"
             }
           }
         }

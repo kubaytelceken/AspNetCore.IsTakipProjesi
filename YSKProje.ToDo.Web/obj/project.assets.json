@@ -9003,11 +9003,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
       "projectName": "YSKProje.ToDo.Web",
-      "projectPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
+      "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
       "packagesPath": "C:\\Users\\Kubay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Web\\obj\\",
+      "outputPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kubay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9023,8 +9023,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj": {
-              "projectPath": "C:\\Users\\Kubay\\source\\repos\\UdemyToDo\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj"
+            "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj": {
+              "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Business\\YSKProje.ToDo.Business.csproj"
             }
           }
         }
