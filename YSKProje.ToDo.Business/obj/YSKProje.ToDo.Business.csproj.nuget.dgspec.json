@@ -41,6 +41,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
+            "FastMember": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "iTextSharp.LGPLv2.Core": {
+              "target": "Package",
+              "version": "[1.6.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

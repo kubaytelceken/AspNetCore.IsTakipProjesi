@@ -1,0 +1,26 @@
+﻿@model AppUserListViewModel
+@{
+    string active = string.Empty;
+    if (TempData["Active"] != null)
+    {
+        active = TempData["Active"].ToString();
+    }
+
+}
+
+<div class="border border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+        <img src="~/img/@Model.Picture" alt="@Model.Name" style="height:10rem!important" class="w-100 img-thumbnail" />
+    <h4>@Model.Name-@Model.Surname</h4>
+    </div>
+    <div class="list-group list-group-flush">
+        <a asp-action="Index" asp-controller="Gorev" class="list-group-item list-group-item-action @(active=="gorev"?"active":"")"><i class="fas fa-tasks mr-2"></i>Görev İşlemleri</a>
+        <a asp-action="Index" asp-controller="Aciliyet" class="list-group-item list-group-item-action  @(active=="aciliyet"?"active":"")"><i class="fas fa-exclamation mr-2"></i>Aciliyet İşlemleri</a>
+        <a asp-action="Index" asp-controller="IsEmri" class="list-group-item list-group-item-action  @(active=="isemri"?"active":"")"><i class="fas fa-file-alt mr-2"></i>İş Emirleri</a>
+        <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-pie mr-2"></i>Grafikler</a>
+        <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-area mr-2"></i>İstatistikler</a>
+        <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-bell mr-2"></i>Bildirimler</a>
+        <a asp-action="Index" asp-controller="Profil" class="list-group-item list-group-item-action @(active=="profil"?"active":"")"><i class="far fa-id-badge mr-2"></i>Profilim</a>
+        <a asp-area="" asp-action="CikisYap" asp-controller="Home" class="list-group-item list-group-item-action "><i class="fas fa-file-alt mr-2"></i>Çıkış Yap</a>
+    </div>
+</div>

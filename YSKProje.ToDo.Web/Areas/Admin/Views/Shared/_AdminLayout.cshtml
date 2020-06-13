@@ -1,12 +1,4 @@
-﻿@{ 
-    string active = string.Empty;
-    if (TempData["Active"] != null)
-    {
-        active = TempData["Active"].ToString();
-    }
-
-}
-
+﻿
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -33,19 +25,7 @@
     <div class="d-flex" id="wrapper">
 
         <!-- Sidebar -->
-        <div class="border border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Admin Sayfası</div>
-            <div class="list-group list-group-flush">
-                <a asp-action="Index" asp-controller="Gorev" class="list-group-item list-group-item-action @(active=="gorev"?"active":"")"><i class="fas fa-tasks mr-2"></i>Görev İşlemleri</a>
-                <a asp-action="Index" asp-controller="Aciliyet" class="list-group-item list-group-item-action  @(active=="aciliyet"?"active":"")"><i class="fas fa-exclamation mr-2"></i>Aciliyet İşlemleri</a>
-                <a asp-action="Index" asp-controller="IsEmri" class="list-group-item list-group-item-action  @(active=="isemri"?"active":"")"><i class="fas fa-file-alt mr-2"></i>İş Emirleri</a>
-                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-pie mr-2"></i>Grafikler</a>
-                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-chart-area mr-2"></i>İstatistikler</a>
-                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-bell mr-2"></i>Bildirimler</a>
-                <a href="#" class="list-group-item list-group-item-action "><i class="far fa-id-badge mr-2"></i>Profilim</a>
-                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-file-alt mr-2"></i>Çıkış Yap</a>
-            </div>
-        </div>
+        @await Component.InvokeAsync("Wrapper")
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">

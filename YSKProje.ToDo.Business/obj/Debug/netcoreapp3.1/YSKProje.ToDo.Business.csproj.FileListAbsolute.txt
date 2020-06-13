@@ -22,7 +22,7 @@ C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.csprojAssemblyReference.cache
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.AssemblyInfoInputs.cache
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.AssemblyInfo.cs
-C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.csproj.CoreCompileInputs.cache
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.csproj.CopyComplete
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.dll
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.pdb
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.csproj.CoreCompileInputs.cache

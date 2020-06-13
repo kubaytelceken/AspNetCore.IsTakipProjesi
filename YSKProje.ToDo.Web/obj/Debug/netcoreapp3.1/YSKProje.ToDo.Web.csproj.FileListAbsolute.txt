@@ -330,3 +330,10 @@ C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Web.dll
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Web.pdb
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Web.genruntimeconfig.cache
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\EPPlus.dll
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\FastMember.dll
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\iTextSharp.LGPLv2.Core.dll
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profil\Index.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Components\Wrapper\Default.cshtml.g.cs

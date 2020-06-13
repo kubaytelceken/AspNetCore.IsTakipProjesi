@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.1.2" />
+    <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\YSKProje.ToDo.DataAccess\YSKProje.ToDo.DataAccess.csproj" />
   </ItemGroup>
 

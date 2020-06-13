@@ -100,6 +100,11 @@ namespace YSKProje.ToDo.Web.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> CikisYap()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index");
+        }
 
     }
 }
