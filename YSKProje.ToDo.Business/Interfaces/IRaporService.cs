@@ -7,6 +7,6 @@ namespace YSKProje.ToDo.Business.Interfaces
 {
     public interface IRaporService : IGenericService<Rapor>
     {
-
+        Rapor GetirGorevIleId(int id);
     }
 }

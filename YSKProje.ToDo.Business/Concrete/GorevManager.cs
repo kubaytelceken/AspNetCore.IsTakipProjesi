@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using YSKProje.ToDo.Business.Interfaces;
@@ -50,6 +51,16 @@ namespace YSKProje.ToDo.Business.Concrete
         public List<Gorev> GetirTumTablolarla()
         {
             return _gorevDal.GetirTumTablolarla();
+        }
+
+        public List<Gorev> GetirTumTablolarla(Expression<Func<Gorev, bool>> filter)
+        {
+            return _gorevDal.GetirTumTablolarla(filter);
+        }
+
+        public List<Gorev> GetirTumTablolarlaTamamlanmayan(out int toplamSayfa, int userId, int aktifSayfa)
+        {
+            return _gorevDal.GetirTumTablolarlaTamamlanmayan(out toplamSayfa, userId, aktifSayfa);
         }
 
         public void Guncelle(Gorev tablo)

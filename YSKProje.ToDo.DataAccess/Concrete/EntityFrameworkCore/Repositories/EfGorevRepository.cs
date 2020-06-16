@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using YSKProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
 using YSKProje.ToDo.DataAccess.Interfaces;
@@ -42,6 +43,20 @@ namespace YSKProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             return context.Gorevler.Include(I => I.Aciliyet).Include(I=>I.Raporlar).Include(I=>I.AppUser).Where(I => !I.Durum).OrderByDescending(I => I.OlusturulmaTarih).ToList();
         }
 
+        public List<Gorev> GetirTumTablolarla(Expression<Func<Gorev, bool>> filter)
+        {
+            using var context = new ToDoContext();
+            return context.Gorevler.Include(I => I.Aciliyet).Include(I => I.Raporlar).Include(I => I.AppUser).Where(filter).OrderByDescending(I => I.OlusturulmaTarih).ToList();
 
+        }
+
+        public List<Gorev> GetirTumTablolarlaTamamlanmayan(out int toplamSayfa, int userId,int aktifSayfa=1)
+        {
+            using var context = new ToDoContext();
+            var returnValue = context.Gorevler.Include(I => I.Aciliyet).Include(I => I.Raporlar).Include(I => I.AppUser).Where(I => I.AppUserId == userId && I.Durum).OrderByDescending(I => I.OlusturulmaTarih);
+
+            toplamSayfa = (int)Math.Ceiling((double)returnValue.Count() / 3);
+            return returnValue.Skip((aktifSayfa - 1) * 3).Take(3).ToList();    
+        }
     }
 }

@@ -336,4 +336,11 @@ C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profil\Index.cshtml.g.cs
-C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Components\Wrapper\Default.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Wrapper\Default.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Wrapper\Member.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\Profil\Index.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\_ViewImports.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\Index.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\EkleRapor.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\GuncelleRapor.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\Gorev\Index.cshtml.g.cs
