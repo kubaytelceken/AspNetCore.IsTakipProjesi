@@ -15,5 +15,7 @@ namespace YSKProje.ToDo.DataAccess.Interfaces
         List<Gorev> GetirileAppUserId(int appuserId);
         Gorev GetirAciliyetIdIle(int id);
         Gorev GetirRaporlarileId(int id);
+        int GetirGorevSayisiTamamlananIleAppUserId(int id);
+        int GetirGorevSayisiTamamlanmasiGerekenIleAppUserId(int id);
     }
 }

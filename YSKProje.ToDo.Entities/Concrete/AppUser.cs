@@ -14,6 +14,7 @@ namespace YSKProje.ToDo.Entities.Concrete
 
         //bir kullanıcının birden fazla görevi olabilir. o yüzden liste ile görevleri çekecegiz.
         public List<Gorev> Gorevler { get; set; }
+        public List<Bildirim> Bildirimler { get; set; }
 
     }
 }

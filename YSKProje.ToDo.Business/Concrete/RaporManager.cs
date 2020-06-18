@@ -32,6 +32,11 @@ namespace YSKProje.ToDo.Business.Concrete
             return _raporDal.GetirIdile(id);
         }
 
+        public int GetirRaporSayisiIleAppUserId(int id)
+        {
+            return _raporDal.GetirRaporSayisiIleAppUserId(id);
+        }
+
         public void Guncelle(Rapor tablo)
         {
             _raporDal.Guncelle(tablo);

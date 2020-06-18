@@ -4,5 +4,93 @@
     Layout = "~/Areas/Member/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h1>Index</h1>
+    <div class="row mt-3">
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary text-center mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Tamamlanan Görev Sayısı</h4>
+
+                    @if (ViewBag.GorevSayisiTamamlanan > 0)
+                    {
+                        <p class="card-text display-4">@ViewBag.GorevSayisiTamamlanan</p>
+                        <p>
+                            <a asp-action="Index" asp-controller="Gorev" class="btn btn-light btn-sm">
+                                <i class="fas fa-chevron-circle-right mr-2"></i> İncele
+                            </a>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="card-text display-4">0</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary text-center mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Tamamlanmayan Görev Sayısı</h4>
+
+                    @if (ViewBag.GorevSayisiTamamlamasiGereken > 0)
+                    {
+                        <p class="card-text display-4">@ViewBag.GorevSayisiTamamlamasiGereken</p>
+                        <p>
+                            <a asp-action="Index" asp-controller="IsEmri" class="btn btn-light btn-sm">
+                                <i class="fas fa-chevron-circle-right mr-2"></i> İncele
+                            </a>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="card-text display-4">0</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary text-center mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Okunmamış Bildirim Sayısı</h4>
+
+                    @if (ViewBag.OkunmayanBildirimSayisi > 0)
+                    {
+                        <p class="card-text display-4">@ViewBag.OkunmayanBildirimSayisi</p>
+                        <p>
+                            <a asp-action="Index" asp-controller="Bildirim" class="btn btn-light btn-sm">
+                                <i class="fas fa-chevron-circle-right mr-2"></i> İncele
+                            </a>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="card-text display-4">0</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary text-center mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title">Yazılan Rapor Sayısı</h4>
+                    @if (ViewBag.RaporSayisi > 0)
+                    {
+                        <p class="card-text display-4">@ViewBag.RaporSayisi</p>
+                    }
+                    else
+                    {
+                        <p class="card-text display-4">0</p>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
 

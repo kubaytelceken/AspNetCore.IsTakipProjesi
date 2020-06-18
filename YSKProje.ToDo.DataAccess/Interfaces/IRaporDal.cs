@@ -8,5 +8,6 @@ namespace YSKProje.ToDo.DataAccess.Interfaces
     public interface IRaporDal : IGenericDal<Rapor>
     {
         Rapor GetirGorevIleId(int id);
+        int GetirRaporSayisiIleAppUserId(int id);
     }
 }

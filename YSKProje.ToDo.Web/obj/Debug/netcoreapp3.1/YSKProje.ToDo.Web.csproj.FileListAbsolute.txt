@@ -344,3 +344,5 @@ C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\EkleRapor.cshtml.g.cs
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\IsEmri\GuncelleRapor.cshtml.g.cs
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\Gorev\Index.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Bildirim\Index.cshtml.g.cs
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Member\Views\Bildirim\Index.cshtml.g.cs
