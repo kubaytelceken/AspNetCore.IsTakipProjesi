@@ -70,5 +70,17 @@ namespace YSKProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Repositories
             using var context = new ToDoContext();
             return context.Gorevler.Count(I => I.AppUserId == id && !I.Durum);
         }
+
+        public int GetirAtanmayıBekleyenGörevSayisi()
+        {
+            using var context = new ToDoContext();
+            return context.Gorevler.Count(I => I.AppUserId == null && !I.Durum);
+        }
+
+        public int GetirTamamlanmisGorevSayisi()
+        {
+            using var context = new ToDoContext();
+            return context.Gorevler.Count(I => I.Durum);
+        }
     }
 }

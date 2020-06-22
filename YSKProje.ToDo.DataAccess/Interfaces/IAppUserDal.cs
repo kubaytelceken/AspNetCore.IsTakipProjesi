@@ -9,5 +9,7 @@ namespace YSKProje.ToDo.DataAccess.Interfaces
     {
         List<AppUser> getirAdminOlmayanlar();
         List<AppUser> getirAdminOlmayanlar(out int toplamSayfa,string aranacakKelime, int aktifSayfa = 1);
+        List<DualHelper> EnCokGorevTamamlamisPersoneller();
+        List<DualHelper> EnCokGorevdeCalisanPersoneller();
     }
 }

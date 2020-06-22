@@ -9,5 +9,6 @@ namespace YSKProje.ToDo.DataAccess.Interfaces
     {
         Rapor GetirGorevIleId(int id);
         int GetirRaporSayisiIleAppUserId(int id);
+        int GetiRaporSayisi();
     }
 }

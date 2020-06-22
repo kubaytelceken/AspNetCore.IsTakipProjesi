@@ -14,6 +14,17 @@ namespace YSKProje.ToDo.Business.Concrete
         {
             _userDal = userDal;
         }
+
+        public List<DualHelper> EnCokGorevdeCalisanPersoneller()
+        {
+            return _userDal.EnCokGorevdeCalisanPersoneller();
+        }
+
+        public List<DualHelper> EnCokGorevTamamlamisPersoneller()
+        {
+            return _userDal.EnCokGorevTamamlamisPersoneller();
+        }
+
         public List<AppUser> getirAdminOlmayanlar()
         {
             return _userDal.getirAdminOlmayanlar();

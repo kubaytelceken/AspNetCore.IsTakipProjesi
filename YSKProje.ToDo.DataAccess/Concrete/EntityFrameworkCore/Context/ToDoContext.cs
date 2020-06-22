@@ -18,6 +18,7 @@ namespace YSKProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.ApplyConfiguration(new GorevMap());
             modelBuilder.ApplyConfiguration(new AciliyetMap());
             modelBuilder.ApplyConfiguration(new RaporMap());
