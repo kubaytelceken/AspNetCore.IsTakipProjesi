@@ -33,6 +33,47 @@
           "lib/netcoreapp2.0/FastMember.dll": {}
         }
       },
+      "FluentValidation/8.6.2": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/8.6.2": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "8.6.2",
+          "FluentValidation.DependencyInjectionExtensions": "8.6.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/8.6.2": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "8.6.2",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll": {}
+        }
+      },
       "iTextSharp.LGPLv2.Core/1.6.7": {
         "type": "package",
         "dependencies": {
@@ -2327,6 +2368,16 @@
           "bin/placeholder/YSKProje.ToDo.DataAccess.dll": {}
         }
       },
+      "YSKProje.ToDo.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/YSKProje.ToDo.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/YSKProje.ToDo.DTO.dll": {}
+        }
+      },
       "YSKProje.ToDo.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2379,6 +2430,55 @@
         "lib/net461/FastMember.dll",
         "lib/netcoreapp2.0/FastMember.dll",
         "lib/netstandard2.0/FastMember.dll"
+      ]
+    },
+    "FluentValidation/8.6.2": {
+      "sha512": "N2vz+f6pAX9AI19hu83U2LJjjc/ETzWGlICVanu3DIG76QhzEu3PR/CQSFBX69PRuBTivrW4jhBzeV7dXIfqyw==",
+      "type": "package",
+      "path": "fluentvalidation/8.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.8.6.2.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net45/FluentValidation.dll",
+        "lib/net45/FluentValidation.xml",
+        "lib/netstandard1.1/FluentValidation.dll",
+        "lib/netstandard1.1/FluentValidation.xml",
+        "lib/netstandard1.6/FluentValidation.dll",
+        "lib/netstandard1.6/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/8.6.2": {
+      "sha512": "55s9XfDEtykWAd3KjWiB9xM6FsYQW4K0gTWY4Sl4f65vEdb2nlS3uijtKIpRuayLYMC5/Bvd9QUhOsSGZ11Pwg==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/8.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/netcoreapp3.0/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.dll",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/8.6.2": {
+      "sha512": "A3Hw0xjB/j6b/UiC8RgLsp5TkApZOsLzh5LAmfZkbQpWBrAqo8B4eOm+uyYhN3crSg0E6kgse8k6EdZpRoj+sQ==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/8.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml"
       ]
     },
     "iTextSharp.LGPLv2.Core/1.6.7": {
@@ -7653,6 +7753,11 @@
       "path": "../YSKProje.ToDo.DataAccess/YSKProje.ToDo.DataAccess.csproj",
       "msbuildProject": "../YSKProje.ToDo.DataAccess/YSKProje.ToDo.DataAccess.csproj"
     },
+    "YSKProje.ToDo.DTO/1.0.0": {
+      "type": "project",
+      "path": "../YSKProje.ToDo.DTO/YSKProje.ToDo.DTO.csproj",
+      "msbuildProject": "../YSKProje.ToDo.DTO/YSKProje.ToDo.DTO.csproj"
+    },
     "YSKProje.ToDo.Entities/1.0.0": {
       "type": "project",
       "path": "../YSKProje.ToDo.Entities/YSKProje.ToDo.Entities.csproj",
@@ -7663,6 +7768,8 @@
     ".NETCoreApp,Version=v3.1": [
       "EPPlus >= 5.1.2",
       "FastMember >= 1.5.0",
+      "FluentValidation.AspNetCore >= 8.6.2",
+      "YSKProje.ToDo.DTO >= 1.0.0",
       "YSKProje.ToDo.DataAccess >= 1.0.0",
       "iTextSharp.LGPLv2.Core >= 1.6.7"
     ]
@@ -7695,6 +7802,9 @@
           "projectReferences": {
             "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj": {
               "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DataAccess\\YSKProje.ToDo.DataAccess.csproj"
+            },
+            "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DTO\\YSKProje.ToDo.DTO.csproj": {
+              "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.DTO\\YSKProje.ToDo.DTO.csproj"
             }
           }
         }
@@ -7715,6 +7825,10 @@
           "FastMember": {
             "target": "Package",
             "version": "[1.5.0, )"
+          },
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[8.6.2, )"
           },
           "iTextSharp.LGPLv2.Core": {
             "target": "Package",
@@ -7738,6 +7852,9 @@
           }
         ],
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

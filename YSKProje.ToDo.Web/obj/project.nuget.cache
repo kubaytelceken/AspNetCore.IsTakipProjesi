@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "mUDJQrXZNLg0O9UgbTdtzjZynf9u1M4/SsmNydE31RDoprlVTNoXr8sFHR34+9c7xetTngsM4kYP70S0wXo73Q==",
+  "dgSpecHash": "KyqRFhijPsvoKIE0r8CerJ2XvPPBrPwSopYS+81AZkZogKyC+NxFQRrV1XXcPWIfMrWIDD8S/IvA+3/dtMh+pA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Kubay\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\epplus\\5.1.2\\epplus.5.1.2.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\fastmember\\1.5.0\\fastmember.1.5.0.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\itextsharp.lgplv2.core\\1.6.7\\itextsharp.lgplv2.core.1.6.7.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
