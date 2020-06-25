@@ -196,7 +196,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Entities\\YSKProje.ToDo.Entities.csproj": {
+                "projectPath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Entities\\YSKProje.ToDo.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

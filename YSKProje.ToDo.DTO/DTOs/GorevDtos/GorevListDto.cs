@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using YSKProje.ToDo.Entities.Concrete;
 
 namespace YSKProje.ToDo.DTO.DTOs.GorevDtos
 {
@@ -13,6 +14,6 @@ namespace YSKProje.ToDo.DTO.DTOs.GorevDtos
         public bool Durum { get; set; }
         //bir görevin bir aciliyet durumu olabilir.foreign key ile
         public int AciliyetId { get; set; }
-        //public Aciliyet Aciliyet { get; set; }
+        public Aciliyet Aciliyet { get; set; }
     }
 }

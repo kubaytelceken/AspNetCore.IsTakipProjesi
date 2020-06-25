@@ -11,7 +11,7 @@ namespace YSKProje.ToDo.Business.ValidationRules.FluentValidation
         public AppUserSignInValidator()
         {
             RuleFor(I => I.UserName).NotNull().WithMessage("Kullanıcı adı boş geçilemez");
-            RuleFor(I => I.Password).NotNull().WithMessage("Kullanıcı adı boş geçilemez");
+            RuleFor(I => I.Password).NotNull().WithMessage("Şifre boş geçilemez");
             
         }
     }

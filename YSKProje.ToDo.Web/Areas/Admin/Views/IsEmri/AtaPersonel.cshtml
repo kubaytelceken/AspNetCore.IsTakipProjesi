@@ -1,4 +1,4 @@
-﻿@model GorevListViewModel
+﻿@model GorevListDto
 @{
     ViewData["Title"] = "AtaPersonel";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -46,7 +46,7 @@
         <div class="col-md-8">
 
 
-            @foreach (var item in (List<AppUserListViewModel>)ViewBag.Personeller)
+            @foreach (var item in (List<AppUserListDto>)ViewBag.Personeller)
             {
                 <div class="card  mb-3 p-2">
                     <div class="row no-gutters">

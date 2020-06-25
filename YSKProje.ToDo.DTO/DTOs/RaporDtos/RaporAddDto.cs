@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using YSKProje.ToDo.Entities.Concrete;
 
 namespace YSKProje.ToDo.DTO.DTOs.RaporDtos
 {
@@ -12,7 +13,7 @@ namespace YSKProje.ToDo.DTO.DTOs.RaporDtos
         //[Display(Name = "Detay :")]
         //[Required(ErrorMessage = "Detay Alanı Boş Geçilemez.")]
         public string Detay { get; set; }
-        //public Gorev Gorev { get; set; }
+        public Gorev Gorev { get; set; }
         public int GorevId { get; set; }
     }
 }

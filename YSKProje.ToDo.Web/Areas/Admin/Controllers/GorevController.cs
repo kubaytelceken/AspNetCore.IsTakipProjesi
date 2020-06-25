@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using YSKProje.ToDo.Business.Interfaces;
+using YSKProje.ToDo.DTO.DTOs.GorevDtos;
 using YSKProje.ToDo.Entities.Concrete;
 using YSKProje.ToDo.Web.Areas.Admin.Models;
 
@@ -18,40 +20,44 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
     {
         private readonly IGorevService _gorevService;
         private readonly IAciliyetService _aciliyetService;
-        public GorevController(IGorevService gorevService, IAciliyetService aciliyetService)
+        private readonly IMapper _mapper;
+        public GorevController(IGorevService gorevService, IAciliyetService aciliyetService, IMapper mapper)
         {
             _gorevService = gorevService;
             _aciliyetService = aciliyetService;
+            _mapper = mapper;
+
         }
         public IActionResult Index()
         {
             TempData["Active"] = "gorev";
-            List<Gorev> gorevler = _gorevService.GetirAciliyetIleTamamlanmayan();
-            List<GorevListViewModel> model = new List<GorevListViewModel>();
-            foreach (var item in gorevler)
-            {
-                GorevListViewModel gorevModel = new GorevListViewModel();
-                gorevModel.Id = item.Id;
-                gorevModel.Ad = item.Ad;
-                gorevModel.Aciklama = item.Aciklama;
-                gorevModel.Aciliyet = item.Aciliyet;
-                gorevModel.AciliyetId = item.AciliyetId;
-                gorevModel.Durum = item.Durum;
-                gorevModel.OlusturulmaTarih = item.OlusturulmaTarih; 
+            //List<Gorev> gorevler = _gorevService.GetirAciliyetIleTamamlanmayan();
+            //List<GorevListViewModel> model = new List<GorevListViewModel>();
+            //foreach (var item in gorevler)
+            //{
+            //    GorevListViewModel gorevModel = new GorevListViewModel();
+            //    gorevModel.Id = item.Id;
+            //    gorevModel.Ad = item.Ad;
+            //    gorevModel.Aciklama = item.Aciklama;
+            //    gorevModel.Aciliyet = item.Aciliyet;
+            //    gorevModel.AciliyetId = item.AciliyetId;
+            //    gorevModel.Durum = item.Durum;
+            //    gorevModel.OlusturulmaTarih = item.OlusturulmaTarih; 
 
-                model.Add(gorevModel);
-            }
-            return View(model);
+            //    model.Add(gorevModel);
+            //}
+            
+            return View(_mapper.Map<List<GorevListDto>>(_gorevService.GetirAciliyetIleTamamlanmayan()));
         }
 
         public IActionResult EkleGorev()
         {
             TempData["Active"] = "gorev";
             ViewBag.Aciliyetler =new SelectList(_aciliyetService.GetirHepsi(),"Id","Tanim");
-            return View(new GorevAddViewModel());
+            return View(new GorevAddDto());
         }
         [HttpPost]
-        public IActionResult EkleGorev(GorevAddViewModel model)
+        public IActionResult EkleGorev(GorevAddDto model)
         {
            if (ModelState.IsValid)
            {
@@ -73,18 +79,19 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
         {
             TempData["Active"] = "gorev";
             var gorev = _gorevService.GetirIdile(id);
-            GorevUpdateViewModel model = new GorevUpdateViewModel
-            {
-                Id = gorev.Id,
-                Aciklama = gorev.Aciklama,
-                AciliyetId = gorev.AciliyetId,
-                Ad = gorev.Ad
-            };
+            //GorevUpdateViewModel model = new GorevUpdateViewModel
+            //{
+            //    Id = gorev.Id,
+            //    Aciklama = gorev.Aciklama,
+            //    AciliyetId = gorev.AciliyetId,
+            //    Ad = gorev.Ad
+            //};
+            
             ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim",gorev.AciliyetId);
-            return View(model);
+            return View(_mapper.Map<GorevUpdateDto>(gorev));
         }
         [HttpPost]
-        public IActionResult GuncelleGorev(GorevUpdateViewModel model)
+        public IActionResult GuncelleGorev(GorevUpdateDto model)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +105,7 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim", model.AciliyetId);
             return View(model);
         }
 

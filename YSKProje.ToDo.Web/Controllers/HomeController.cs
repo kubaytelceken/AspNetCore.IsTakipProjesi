@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using YSKProje.ToDo.Business.Interfaces;
+using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.Entities.Concrete;
 using YSKProje.ToDo.Web.Models;
 
@@ -16,12 +18,14 @@ namespace YSKProje.ToDo.Web.Controllers
         private readonly IGorevService _gorevService;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IMapper _mapper;
 
-        public HomeController(IGorevService gorevService, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public HomeController(IGorevService gorevService, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper)
         {
             _gorevService = gorevService;
             _userManager = userManager;
             _signInManager = signInManager;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -29,7 +33,7 @@ namespace YSKProje.ToDo.Web.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> GirisYap(AppUserSignInModel model)
+        public async Task<IActionResult> GirisYap(AppUserSignInDto model)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +69,7 @@ namespace YSKProje.ToDo.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> KayitOl(AppUserAddViewModel model)
+        public async Task<IActionResult> KayitOl(AppUserAddDto model)
         {
             if (ModelState.IsValid)
             {

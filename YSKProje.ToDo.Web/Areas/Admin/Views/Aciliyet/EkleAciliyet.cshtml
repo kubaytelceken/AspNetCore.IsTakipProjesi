@@ -1,4 +1,4 @@
-﻿@model AciliyetAddViewModel
+﻿@model AciliyetAddDto
 @{
     ViewData["Title"] = "EkleAciliyet";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -6,7 +6,7 @@
 
 <form asp-action="EkleAciliyet" class="w-75 mx-auto p-3" method="post">
     <div class="form-group">
-        <label asp-for="Tanim"></label>
+        <label asp-for="Tanim">Tanım :</label>
         <span asp-validation-for="Tanim" class="text-danger"></span>
         <input asp-for="Tanim" type="text" class="form-control" />
     </div>
