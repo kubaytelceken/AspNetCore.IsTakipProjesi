@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using YSKProje.ToDo.Business.Interfaces;
 using YSKProje.ToDo.Entities.Concrete;
+using YSKProje.ToDo.Web.BaseControllers;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Authorize(Roles = "Member")]
-    [Area("Member")]
-    public class HomeController : Controller
+    [Authorize(Roles = RoleInfo.Member)]
+    [Area(AreaInfo.Member)]
+    public class HomeController : BaseIdentityController
     {
         /*
          * İlgili kullanıcının yazdığı rapor sayısı
@@ -21,20 +23,18 @@ namespace YSKProje.ToDo.Web.Areas.Member.Controllers
          * ilgili kullanıcının tamamlaması gereken görev sayısı
          */
         private readonly IRaporService _raporService;
-        private readonly UserManager<AppUser> _userManager;
         private readonly IGorevService _gorevService;
         private readonly IBildirimService _bildirimService;
-        public HomeController(IRaporService raporService, UserManager<AppUser> userManager, IGorevService gorevService, IBildirimService bildirimService)
+        public HomeController(IRaporService raporService, UserManager<AppUser> userManager, IGorevService gorevService, IBildirimService bildirimService) : base(userManager)
         {
             _raporService = raporService;
-            _userManager = userManager;
             _gorevService = gorevService;
             _bildirimService = bildirimService;
         }
         public async Task<IActionResult> Index()
         {
-            TempData["active"] = "anasayfa";
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            TempData["active"] = TempDataInfo.Anasayfa;
+            var user = await GetirGirisYapanKullanici();
             ViewBag.RaporSayisi = _raporService.GetirRaporSayisiIleAppUserId(user.Id);
             ViewBag.OkunmayanBildirimSayisi = _bildirimService.GetirOkunmayanSayisiIleAppUserId(user.Id);
             ViewBag.GorevSayisiTamamlanan = _gorevService.GetirGorevSayisiTamamlananIleAppUserId(user.Id);

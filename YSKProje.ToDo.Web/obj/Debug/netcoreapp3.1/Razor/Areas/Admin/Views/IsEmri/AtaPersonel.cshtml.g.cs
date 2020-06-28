@@ -14,41 +14,34 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 3 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
-using YSKProje.ToDo.Web.Areas.Admin.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using YSKProje.ToDo.DTO.DTOs.AciliyetDtos;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using YSKProje.ToDo.DTO.DTOs.BildirimDtos;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 5 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using YSKProje.ToDo.DTO.DTOs.GorevDtos;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
+#line 6 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\_ViewImports.cshtml"
 using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"715eed54bd78d7b5ab403920df4c7af4ae1daa08", @"/Areas/Admin/Views/IsEmri/AtaPersonel.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7c6c9d001201c7d9fec1fda92877c142a0a210c7", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8af2779da0148f888ce5db6596ce61b732904477", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_IsEmri_AtaPersonel : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<GorevListDto>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "AtaPersonel", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -116,7 +109,7 @@ using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                    </strong> kelimesi için sonuçları görüyorsunuz.\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa088843", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa088604", async() => {
                 WriteLiteral("Filtreyi Kaldır");
             }
             );
@@ -156,7 +149,7 @@ using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 #line hidden
 #nullable disable
             WriteLiteral("            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0811421", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0811182", async() => {
                 WriteLiteral("\r\n                <input type=\"text\" name=\"s\" class=\"form-control-sm border-top-0 border-left-0 border-right-0 border-primary\" />\r\n                <button type=\"submit\" class=\"btn btn-primary btn-sm\">Ara</button>\r\n            ");
             }
             );
@@ -229,7 +222,7 @@ using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 #line hidden
 #nullable disable
             WriteLiteral("                <div class=\"card  mb-3 p-2\">\r\n                    <div class=\"row no-gutters\">\r\n                        <div class=\"col-md-4\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "715eed54bd78d7b5ab403920df4c7af4ae1daa0815920", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "715eed54bd78d7b5ab403920df4c7af4ae1daa0815681", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -279,7 +272,7 @@ AddHtmlAttributeValue("", 2141, item.Name, 2141, 10, false);
 #line hidden
 #nullable disable
             WriteLiteral("</h5>\r\n                                <p class=\"card-text\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0819024", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("getirGorevAppUserId", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0818785", async() => {
             }
             );
             __YSKProje_ToDo_Web_TagHelpers_GorevAppUserIdTagHelper = CreateTagHelper<global::YSKProje.ToDo.Web.TagHelpers.GorevAppUserIdTagHelper>();
@@ -308,7 +301,7 @@ __YSKProje_ToDo_Web_TagHelpers_GorevAppUserIdTagHelper.AppUserId = item.Id;
 #line hidden
 #nullable disable
             WriteLiteral("</small>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0820985", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0820746", async() => {
                 WriteLiteral("Görevlendir");
             }
             );
@@ -388,7 +381,7 @@ WriteAttributeValue(" ", 3403, ViewBag.Aktifsayfa==i?"active":"", 3404, 36, fals
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0825894", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0825655", async() => {
 #nullable restore
 #line 80 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\IsEmri\AtaPersonel.cshtml"
                                                                     Write(i);
@@ -486,7 +479,7 @@ WriteAttributeValue(" ", 3911, ViewBag.Aktifsayfa==i?"active":"", 3912, 36, fals
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0831426", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715eed54bd78d7b5ab403920df4c7af4ae1daa0831187", async() => {
 #nullable restore
 #line 90 "C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Web\Areas\Admin\Views\IsEmri\AtaPersonel.cshtml"
                                                    Write(i);

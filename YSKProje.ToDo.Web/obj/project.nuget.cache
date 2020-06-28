@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8jEGcMLgNX8nKt3JGZ78pbVvY5Dp9XbtIWiHHyapWi92MqtENS0NljlVxONSIIsG7/JQmi6E9+r4QyuLuKYRbA==",
+  "dgSpecHash": "ukzchFy+8qPHeTjCNqe4ddgMRfqP7qWBxQSjZ0SjdtlvBO6mMnLn44PVFyJ41ohkZAkD3tt638IwET3Ts8TsXg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kubay\\Documents\\GitHub\\AspNetCore.IsTakipProjesi\\YSKProje.ToDo.Web\\YSKProje.ToDo.Web.csproj",
   "expectedPackageFiles": [
@@ -86,6 +86,9 @@
     "C:\\Users\\Kubay\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\nlog\\4.7.2\\nlog.4.7.2.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\nlog.config\\4.7.2\\nlog.config.4.7.2.nupkg.sha512",
+    "C:\\Users\\Kubay\\.nuget\\packages\\nlog.schema\\4.7.2\\nlog.schema.4.7.2.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\portable.bouncycastle\\1.8.6.7\\portable.bouncycastle.1.8.6.7.nupkg.sha512",
     "C:\\Users\\Kubay\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

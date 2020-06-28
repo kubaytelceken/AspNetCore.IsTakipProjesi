@@ -55,7 +55,9 @@ namespace YSKProje.ToDo.Web.Mapping.AutoMapperProfile
             CreateMap<RaporAddDto, Rapor>();
             CreateMap<Rapor, RaporAddDto>();
             CreateMap<RaporUpdateDto, Rapor>();
-            CreateMap<Rapor, RaporUpdateDto>(); 
+            CreateMap<Rapor, RaporUpdateDto>();
+            CreateMap<RaporDosyaDto, Rapor>();
+            CreateMap<Rapor, RaporDosyaDto>();
             #endregion
         }
     }

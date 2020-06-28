@@ -10,12 +10,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using YSKProje.ToDo.Business.Interfaces;
 using YSKProje.ToDo.DTO.DTOs.GorevDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Areas.Admin.Models;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
     public class GorevController : Controller
     {
         private readonly IGorevService _gorevService;
@@ -30,7 +30,8 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            TempData["Active"] = "gorev";
+            TempData["Active"] = TempDataInfo.Gorev;
+            #region Silinen Kısım
             //List<Gorev> gorevler = _gorevService.GetirAciliyetIleTamamlanmayan();
             //List<GorevListViewModel> model = new List<GorevListViewModel>();
             //foreach (var item in gorevler)
@@ -45,14 +46,15 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
             //    gorevModel.OlusturulmaTarih = item.OlusturulmaTarih; 
 
             //    model.Add(gorevModel);
-            //}
-            
+            //} 
+            #endregion
+
             return View(_mapper.Map<List<GorevListDto>>(_gorevService.GetirAciliyetIleTamamlanmayan()));
         }
 
         public IActionResult EkleGorev()
         {
-            TempData["Active"] = "gorev";
+            TempData["Active"] = TempDataInfo.Gorev;
             ViewBag.Aciliyetler =new SelectList(_aciliyetService.GetirHepsi(),"Id","Tanim");
             return View(new GorevAddDto());
         }
@@ -70,23 +72,25 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 
                return RedirectToAction("Index");
            }
-
-           return View(model);
+            ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim");
+            return View(model);
         }
 
 
         public IActionResult GuncelleGorev(int id)
         {
-            TempData["Active"] = "gorev";
+            TempData["Active"] = TempDataInfo.Gorev;
             var gorev = _gorevService.GetirIdile(id);
+            #region Silinen Kısım
             //GorevUpdateViewModel model = new GorevUpdateViewModel
             //{
             //    Id = gorev.Id,
             //    Aciklama = gorev.Aciklama,
             //    AciliyetId = gorev.AciliyetId,
             //    Ad = gorev.Ad
-            //};
-            
+            //}; 
+            #endregion
+
             ViewBag.Aciliyetler = new SelectList(_aciliyetService.GetirHepsi(), "Id", "Tanim",gorev.AciliyetId);
             return View(_mapper.Map<GorevUpdateDto>(gorev));
         }

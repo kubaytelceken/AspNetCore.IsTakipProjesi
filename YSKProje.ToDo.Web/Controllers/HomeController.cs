@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using YSKProje.ToDo.Business.Interfaces;
 using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Models;
+using YSKProje.ToDo.Web.BaseControllers;
 
 namespace YSKProje.ToDo.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseIdentityController
     {
-        private readonly IGorevService _gorevService;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
-        private readonly IMapper _mapper;
 
-        public HomeController(IGorevService gorevService, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper)
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly ICustomLogger _customLogger;
+        public HomeController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ICustomLogger customLogger) :base(userManager)
         {
-            _gorevService = gorevService;
-            _userManager = userManager;
+
             _signInManager = signInManager;
-            _mapper = mapper;
+            _customLogger = customLogger;
         }
 
         public IActionResult Index()
@@ -90,16 +88,22 @@ namespace YSKProje.ToDo.Web.Controllers
                     {
                         return RedirectToAction("Index");
                     }
-                    foreach (var item in addRoleResult.Errors)
-                    {
-                        ModelState.AddModelError("", item.Description);
-                    }
-                    
+                    HataEkle(addRoleResult.Errors);
+                    #region Silinen Kısım
+                    //foreach (var item in addRoleResult.Errors)
+                    //{
+                    //    ModelState.AddModelError("", item.Description);
+                    //} 
+                    #endregion
+
                 }
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+                HataEkle(result.Errors);
+                #region Silinen Kısım
+                //foreach (var item in result.Errors)
+                //{
+                //    ModelState.AddModelError("", item.Description);
+                //} 
+                #endregion
             }
             return View(model);
         }
@@ -108,6 +112,35 @@ namespace YSKProje.ToDo.Web.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult StatusCode(int? code)
+        {
+
+            if (code == 404)
+            {
+                ViewBag.Code = code;
+                ViewBag.Message = "Sayfa Bulunamadı.";
+            }
+
+            return View();
+        }
+
+        public IActionResult Error()
+        {
+            var exceptionHandler =
+            HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+            _customLogger.LogError($"Hatanın oluştuğu yer:{exceptionHandler.Path}" +
+                $"\nHatanın Mesajı :{exceptionHandler.Error.Message}" +
+                $"\nStack Trace : {exceptionHandler.Error.StackTrace}");
+            ViewBag.Path= exceptionHandler.Path;
+            ViewBag.Message = exceptionHandler.Error.Message;
+            return View();
+        }
+
+        public void Hata()
+        {
+            throw new Exception("Bu Bir Hata");
         }
 
     }

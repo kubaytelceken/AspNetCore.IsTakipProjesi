@@ -2,64 +2,72 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using YSKProje.ToDo.Business.Interfaces;
+using YSKProje.ToDo.DTO.DTOs.GorevDtos;
+using YSKProje.ToDo.DTO.DTOs.RaporDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Areas.Admin.Models;
+using YSKProje.ToDo.Web.BaseControllers;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Area("Member")]
-    [Authorize(Roles = "Member")]
-    public class IsEmriController : Controller
+    [Area(AreaInfo.Member)]
+    [Authorize(Roles = RoleInfo.Member)]
+    public class IsEmriController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly IGorevService _gorevService;
         private readonly IRaporService _raporService;
         private readonly IBildirimService _bildirimService;
-        public IsEmriController(IGorevService gorevService, UserManager<AppUser> userManager, IRaporService raporService, IBildirimService bildirimService)
+        private readonly IMapper _mapper;
+        public IsEmriController(IGorevService gorevService, UserManager<AppUser> userManager, IRaporService raporService, IBildirimService bildirimService, IMapper mapper) : base(userManager)
         {
             _gorevService = gorevService;
-            _userManager = userManager;
             _raporService = raporService;
             _bildirimService = bildirimService;
+            _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
-            TempData["Active"] = "isemri";
-            var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var gorev = _gorevService.GetirTumTablolarla(I => I.AppUserId == user.Id && !I.Durum);
-            List<GorevListAllViewModel> models = new List<GorevListAllViewModel>();
-            foreach (var item in gorev)
-            {
-                GorevListAllViewModel model = new GorevListAllViewModel();
-                model.Id = item.Id;
-                model.Ad = item.Ad;
-                model.Aciliyet = item.Aciliyet;
-                model.Aciklama = item.Aciklama;
-                model.AppUser = item.AppUser;
-                model.Raporlar = item.Raporlar;
-                model.OlusturulmaTarih = item.OlusturulmaTarih;
-                models.Add(model);
-            }
-            return View(models);
+            TempData["Active"] = TempDataInfo.IsEmri;
+            var user = await GetirGirisYapanKullanici();
+            //var gorev = _gorevService.GetirTumTablolarla(I => I.AppUserId == user.Id && !I.Durum);
+            #region Silinen Kısım
+            //List<GorevListAllViewModel> models = new List<GorevListAllViewModel>();
+            //foreach (var item in gorev)
+            //{
+            //    GorevListAllViewModel model = new GorevListAllViewModel();
+            //    model.Id = item.Id;
+            //    model.Ad = item.Ad;
+            //    model.Aciliyet = item.Aciliyet;
+            //    model.Aciklama = item.Aciklama;
+            //    model.AppUser = item.AppUser;
+            //    model.Raporlar = item.Raporlar;
+            //    model.OlusturulmaTarih = item.OlusturulmaTarih;
+            //    models.Add(model);
+            //} 
+            #endregion
+            return View(_mapper.Map<List<GorevListAllDto>>(_gorevService.GetirTumTablolarla(I => I.AppUserId == user.Id && !I.Durum)));
         }
 
         public IActionResult EkleRapor(int id)
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             var gorev = _gorevService.GetirAciliyetIdIle(id);
-            RaporAddViewModel model = new RaporAddViewModel();
-            model.GorevId = id;
-            model.Gorev = gorev;
+            RaporAddDto model = new RaporAddDto
+            {
+                GorevId = id,
+                Gorev = gorev
+            };
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> EkleRapor(RaporAddViewModel model)
+        public async Task<IActionResult> EkleRapor(RaporAddDto model)
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             if (ModelState.IsValid)
             {
                 _raporService.Kaydet(new Rapor()
@@ -69,7 +77,7 @@ namespace YSKProje.ToDo.Web.Areas.Member.Controllers
                     Tanim=model.Tanim
                 });
                 var adminUserList = await _userManager.GetUsersInRoleAsync("Admin");
-                var aktifKullanici = await _userManager.FindByNameAsync(User.Identity.Name);
+                var aktifKullanici = await GetirGirisYapanKullanici();
                 foreach (var admin in adminUserList)
                 {
                     _bildirimService.Kaydet(new Bildirim
@@ -87,19 +95,21 @@ namespace YSKProje.ToDo.Web.Areas.Member.Controllers
 
         public IActionResult GuncelleRapor(int id)
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             var rapor =  _raporService.GetirGorevIleId(id);
-            RaporUpdateViewModel model = new RaporUpdateViewModel();
-            model.Id = rapor.Id;
-            model.Tanim = rapor.Tanim;
-            model.Detay = rapor.Detay;
-            model.GorevId = rapor.GorevId;
-            model.Gorev = rapor.Gorev;
+            RaporUpdateDto model = new RaporUpdateDto
+            {
+                Id = rapor.Id,
+                Tanim = rapor.Tanim,
+                Detay = rapor.Detay,
+                GorevId = rapor.GorevId,
+                Gorev = rapor.Gorev
+            };
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult GuncelleRapor(RaporUpdateViewModel model)
+        public IActionResult GuncelleRapor(RaporUpdateDto model)
         {
             if (ModelState.IsValid)
             {
@@ -119,7 +129,7 @@ namespace YSKProje.ToDo.Web.Areas.Member.Controllers
             guncellenecekGorev.Durum = true;
             _gorevService.Guncelle(guncellenecekGorev);
             var adminUserList = await _userManager.GetUsersInRoleAsync("Admin");
-            var aktifKullanici = await _userManager.FindByNameAsync(User.Identity.Name);
+            var aktifKullanici = await GetirGirisYapanKullanici();
             foreach (var admin in adminUserList)
             {
                 _bildirimService.Kaydet(new Bildirim

@@ -11,24 +11,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Areas.Admin.Models;
+using YSKProje.ToDo.Web.BaseControllers;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    [Authorize(Roles ="Admin")]
-    public class ProfilController : Controller
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
+    public class ProfilController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
-        public ProfilController(UserManager<AppUser> userManager, IMapper mapper)
+        public ProfilController(UserManager<AppUser> userManager, IMapper mapper) :base(userManager)
         {
-            _userManager = userManager;
             _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
-            TempData["Active"] = "profil";
+            TempData["Active"] = TempDataInfo.Profil;
             #region Silinen Kısım
             //var appUser = ;
             //;
@@ -39,7 +38,7 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
             //model.Email = appUser.Email;
             //model.Picture = appUser.Picture; 
             #endregion
-            return View(_mapper.Map<AppUserListDto>(await _userManager.FindByNameAsync(User.Identity.Name)));
+            return View(_mapper.Map<AppUserListDto>(await GetirGirisYapanKullanici()));
         }
 
         [HttpPost]
@@ -69,10 +68,7 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
                     TempData["message"] = "Güncelleme işleminiz başarıyla gerçekleşmiştir.";
                     return RedirectToAction("Index");
                 }
-                foreach (var item in identiyResult.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+                HataEkle(identiyResult.Errors);
             }
             return View(model);
         }

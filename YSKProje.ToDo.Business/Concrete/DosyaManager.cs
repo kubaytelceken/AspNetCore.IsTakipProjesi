@@ -33,6 +33,12 @@ namespace YSKProje.ToDo.Business.Concrete
             var returnPath = "/documents/" + fileName;
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/documents/" + fileName);
             var stream = new FileStream(path, FileMode.Create);
+            string arialTtf = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+
+            BaseFont bf = BaseFont.CreateFont(arialTtf, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+            Font f = new Font(bf, 12, Font.NORMAL);
+
 
             Document document = new Document(PageSize.A4, 25f, 25f, 25f, 25f);
             PdfWriter.GetInstance(document, stream);
@@ -40,13 +46,13 @@ namespace YSKProje.ToDo.Business.Concrete
             PdfPTable pdfPTable = new PdfPTable(dataTable.Columns.Count);
             for (int i = 0; i < dataTable.Columns.Count; i++)
             {
-                pdfPTable.AddCell(dataTable.Columns[i].ColumnName);
+                pdfPTable.AddCell(new Phrase(dataTable.Columns[i].ColumnName,f));
             }
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 for (int j = 0; j < dataTable.Columns.Count; j++)
                 {
-                    pdfPTable.AddCell(dataTable.Rows[i][j].ToString());
+                    pdfPTable.AddCell(new Phrase(dataTable.Rows[i][j].ToString(),f));
                 }
             }
             document.Add(pdfPTable);

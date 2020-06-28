@@ -10,35 +10,35 @@ using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using YSKProje.ToDo.Business.Interfaces;
 using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.DTO.DTOs.GorevDtos;
+using YSKProje.ToDo.DTO.DTOs.RaporDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Areas.Admin.Models;
+using YSKProje.ToDo.Web.BaseControllers;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    [Area("Admin")]
-    public class IsEmriController : Controller
+    [Authorize(Roles = RoleInfo.Admin)]
+    [Area(AreaInfo.Admin)]
+    public class IsEmriController : BaseIdentityController
     {
         private readonly IAppUserService _appUserService;
         private readonly IGorevService _gorevService;
-        private readonly UserManager<AppUser> _userManager;
         private readonly IDosyaService _dosyaService;
         private readonly IBildirimService _bildirimService;
         private readonly IMapper _mapper;
 
         public IsEmriController(IAppUserService appUserService, IGorevService gorevService, 
-            UserManager<AppUser> userManager, IDosyaService dosyaService, IBildirimService bildirimService, IMapper mapper)
+            UserManager<AppUser> userManager, IDosyaService dosyaService, IBildirimService bildirimService, IMapper mapper):base(userManager)
         {
             _appUserService = appUserService;
             _gorevService = gorevService;
-            _userManager = userManager;
             _dosyaService = dosyaService;
             _bildirimService = bildirimService;
             _mapper = mapper;
         }
         public IActionResult Index()
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             #region Silinen Kısım
             //List<Gorev> gorevler = _gorevService.GetirTumTablolarla();
             //List<GorevListAllViewModel> models = new List<GorevListAllViewModel>();
@@ -63,7 +63,7 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult Detaylandir(int id)
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             #region Silinen Kısım
             //var gorev = _gorevService.GetirRaporlarileId(id);
             //GorevListAllViewModel model = new GorevListAllViewModel();
@@ -77,23 +77,23 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
         }
         public IActionResult GetirExcel(int id)
         {
-            return File(_dosyaService.AktarExcel(_gorevService.GetirRaporlarileId(id).Raporlar), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", Guid.NewGuid() + ".xlxs");
+            return File(_dosyaService.AktarExcel(_mapper.Map<List<RaporDosyaDto>>(_gorevService.GetirRaporlarileId(id).Raporlar)), 
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", Guid.NewGuid() + ".xlxs");
         }
         public IActionResult GetirPdf(int id)
         {
-            var path = _dosyaService.AktarPdf(_gorevService.GetirRaporlarileId(id).Raporlar);
+            var path = _dosyaService.AktarPdf(_mapper.Map<List<RaporDosyaDto>>(_gorevService.GetirRaporlarileId(id).Raporlar));
             return File(path,"application/pdf", Guid.NewGuid() + ".pdf");
         }
 
         public IActionResult AtaPersonel(int id,string s,int sayfa=1)
         {
-            TempData["Active"] = "isemri";
+            TempData["Active"] = TempDataInfo.IsEmri;
             ViewBag.Aktifsayfa = sayfa;
             //ViewBag.Toplamsayfa = (int)Math.Ceiling((double)_appUserService.getirAdminOlmayanlar().Count / 3);
             ViewBag.Aranan = s;
-            int toplamsayfa;
-            
-            var personeller = _mapper.Map<List<AppUserListDto>>(_appUserService.getirAdminOlmayanlar(out toplamsayfa, s, sayfa));
+
+            var personeller = _mapper.Map<List<AppUserListDto>>(_appUserService.getirAdminOlmayanlar(out int toplamsayfa, s, sayfa));
 
             ViewBag.Toplamsayfa = toplamsayfa;
             #region Silinen Kısım
@@ -111,7 +111,7 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
             #endregion
             ViewBag.Personeller = personeller;
 
-            var gorev = _gorevService.GetirAciliyetIdIle(id);
+            //var gorev = _gorevService.GetirAciliyetIdIle(id);
 
             #region Silinen Kısım
             //GorevListViewModel gorevModel = new GorevListViewModel();
@@ -144,8 +144,8 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
 
         public IActionResult GorevlendirPersonel(PersonelGorevlendirDto model)
         {
-            TempData["Active"] = "isemri";
-            
+            TempData["Active"] = TempDataInfo.IsEmri;
+
 
 
             //var userModel = 
@@ -170,9 +170,11 @@ namespace YSKProje.ToDo.Web.Areas.Admin.Controllers
             #endregion
 
 
-            PersonelGorevlendirListDto personelGorevlendirModel = new PersonelGorevlendirListDto();
-            personelGorevlendirModel.AppUser = _mapper.Map<AppUserListDto>(_userManager.Users.FirstOrDefault(I => I.Id == model.PersonelId));
-            personelGorevlendirModel.Gorev = _mapper.Map<GorevListDto>(_gorevService.GetirAciliyetIdIle(model.GorevId));
+            PersonelGorevlendirListDto personelGorevlendirModel = new PersonelGorevlendirListDto
+            {
+                AppUser = _mapper.Map<AppUserListDto>(_userManager.Users.FirstOrDefault(I => I.Id == model.PersonelId)),
+                Gorev = _mapper.Map<GorevListDto>(_gorevService.GetirAciliyetIdIle(model.GorevId))
+            };
             return View(personelGorevlendirModel);
         }
 

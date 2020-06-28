@@ -11,6 +11,8 @@
           "EPPlus": "5.1.2",
           "FastMember": "1.5.0",
           "FluentValidation.AspNetCore": "8.6.2",
+          "NLog": "4.7.2",
+          "NLog.Config": "4.7.2",
           "YSKProje.ToDo.DTO": "1.0.0",
           "YSKProje.ToDo.DataAccess": "1.0.0",
           "iTextSharp.LGPLv2.Core": "1.6.7"
@@ -555,6 +557,21 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
+      "NLog/4.7.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2.11786"
+          }
+        }
+      },
+      "NLog.Config/4.7.2": {
+        "dependencies": {
+          "NLog": "4.7.2",
+          "NLog.Schema": "4.7.2"
+        }
+      },
+      "NLog.Schema/4.7.2": {},
       "Portable.BouncyCastle/1.8.6.7": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -1877,6 +1894,27 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "NLog/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
+      "path": "nlog/4.7.2",
+      "hashPath": "nlog.4.7.2.nupkg.sha512"
+    },
+    "NLog.Config/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uwrVTjkH9oq65PdHJXrJaIgcmaW3IZB3d8ZowdWf1v0Oq4aSbHlUZW9YDPqAHB+sGIUr/DOr2efIURxsSZnt2w==",
+      "path": "nlog.config/4.7.2",
+      "hashPath": "nlog.config.4.7.2.nupkg.sha512"
+    },
+    "NLog.Schema/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jm/nujpU6oVxrwS/3CA1eSGFckTB7ArBAoR9V9Hus3lve5G0X5o+dsk7oGH1nqRoDTUirPtB2vozW7d43TFgNQ==",
+      "path": "nlog.schema/4.7.2",
+      "hashPath": "nlog.schema.4.7.2.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.6.7": {
       "type": "package",

@@ -27,4 +27,5 @@ C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.pdb
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\bin\Debug\netcoreapp3.1\YSKProje.ToDo.DTO.dll
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\bin\Debug\netcoreapp3.1\YSKProje.ToDo.DTO.pdb
+C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\bin\Debug\netcoreapp3.1\NLog.config
 C:\Users\Kubay\Documents\GitHub\AspNetCore.IsTakipProjesi\YSKProje.ToDo.Business\obj\Debug\netcoreapp3.1\YSKProje.ToDo.Business.csproj.CoreCompileInputs.cache

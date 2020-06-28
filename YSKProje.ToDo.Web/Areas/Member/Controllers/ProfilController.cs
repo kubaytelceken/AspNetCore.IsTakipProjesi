@@ -3,40 +3,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.Entities.Concrete;
-using YSKProje.ToDo.Web.Areas.Admin.Models;
+using YSKProje.ToDo.Web.BaseControllers;
+using YSKProje.ToDo.Web.StringInfo;
 
 namespace YSKProje.ToDo.Web.Areas.Member.Controllers
 {
-    [Area("Member")]
-    [Authorize(Roles = "Member")]
-    public class ProfilController : Controller
+    [Area(AreaInfo.Member)]
+    [Authorize(Roles = RoleInfo.Member)]
+    public class ProfilController : BaseIdentityController
     {
-        private readonly UserManager<AppUser> _userManager;
-        public ProfilController(UserManager<AppUser> userManager)
+        private readonly IMapper _mapper;
+        public ProfilController(UserManager<AppUser> userManager, IMapper mapper) : base(userManager)
         {
-            _userManager = userManager;
+            _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
-            TempData["Active"] = "profil";
-            var appUser = await _userManager.FindByNameAsync(User.Identity.Name);
-            AppUserListViewModel model = new AppUserListViewModel();
-            model.Id = appUser.Id;
-            model.Name = appUser.Name;
-            model.Surname = appUser.Surname;
-            model.Email = appUser.Email;
-            model.Picture = appUser.Picture;
-            return View(model);
+            TempData["Active"] = TempDataInfo.Profil;
+            //var appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+            #region Silinen Kısım
+            //AppUserListViewModel model = new AppUserListViewModel();
+            //model.Id = appUser.Id;
+            //model.Name = appUser.Name;
+            //model.Surname = appUser.Surname;
+            //model.Email = appUser.Email;
+            //model.Picture = appUser.Picture; 
+            #endregion
+            return View(_mapper.Map<AppUserListDto>(await GetirGirisYapanKullanici()));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(AppUserListViewModel model,IFormFile resim)
+        public async Task<IActionResult> Index(AppUserListDto model,IFormFile resim)
         {
             if (ModelState.IsValid)
             {
@@ -62,10 +67,7 @@ namespace YSKProje.ToDo.Web.Areas.Member.Controllers
                     TempData["message"] = "Güncelleme işleminiz başarıyla gerçekleşmiştir.";
                     return RedirectToAction("Index");
                 }
-                foreach (var item in identiyResult.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
+                HataEkle(identiyResult.Errors);
             }
             return View(model);
         }

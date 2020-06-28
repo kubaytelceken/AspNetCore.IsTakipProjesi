@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using YSKProje.ToDo.Business.Concrete;
+using YSKProje.ToDo.Business.DiContainer;
 using YSKProje.ToDo.Business.Interfaces;
 using YSKProje.ToDo.Business.ValidationRules.FluentValidation;
 using YSKProje.ToDo.DataAccess.Concrete.EntityFrameworkCore.Context;
@@ -22,6 +23,7 @@ using YSKProje.ToDo.DTO.DTOs.AppUserDtos;
 using YSKProje.ToDo.DTO.DTOs.GorevDtos;
 using YSKProje.ToDo.DTO.DTOs.RaporDtos;
 using YSKProje.ToDo.Entities.Concrete;
+using YSKProje.ToDo.Web.CustomCollectionExtensions;
 
 namespace YSKProje.ToDo.Web
 {
@@ -33,50 +35,11 @@ namespace YSKProje.ToDo.Web
         {
             //scoped = isteði gerçekleþtiren sessiona özgü ilgili interfaceden sadece 1 tane örnek alýnýr.
             //Transient  = her istekte yeni bir örnek oluþturur.
-            services.AddScoped<IGorevService, GorevManager>(); // igörevservice gördüðüm zaman görevmanagerin örnegini gönderecegim sana.
-            services.AddScoped<IAciliyetService, AciliyetManager>();
-            services.AddScoped<IRaporService, RaporManager>();
-            services.AddScoped<IAppUserService, AppUserManager>();
-            services.AddScoped<IDosyaService, DosyaManager>();
-            services.AddScoped<IBildirimService, BildirimManager>();
-
-            services.AddScoped<IGorevDal, EfGorevRepository>();
-            services.AddScoped<IRaporDal, EfRaporRepository>();
-            services.AddScoped<IAciliyetDal, EfAciliyetRepository>();
-            services.AddScoped<IAppUserDal, EfAppUserRepository>();
-            services.AddScoped<IBildirimDal, EfBildirimRepository>();
-
+            services.AddContainerWithDependencies();
             services.AddDbContext<ToDoContext>();
-            services.AddIdentity<AppUser, AppRole>(opt=>
-            {
-                opt.Password.RequireDigit = false;
-                opt.Password.RequireUppercase = false;
-                opt.Password.RequiredLength = 1;
-                opt.Password.RequireLowercase = false;
-                opt.Password.RequireNonAlphanumeric = false;
-            })
-                .AddEntityFrameworkStores<ToDoContext>();
-
-            services.ConfigureApplicationCookie(opt =>
-            {
-                opt.Cookie.Name = "IsTakipCookie";
-                opt.Cookie.SameSite = SameSiteMode.Strict;
-                opt.Cookie.HttpOnly = true;
-                opt.ExpireTimeSpan = TimeSpan.FromDays(20);
-                opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
-                opt.LoginPath = "/Home/Index";
-            });
-
+            services.AddIdentityConfigure();
             services.AddAutoMapper(typeof(Startup));
-            services.AddTransient<IValidator<AciliyetAddDto>, AciliyetAddValidator>();
-            services.AddTransient<IValidator<AciliyetUpdateDto>, AciliyetUpdateValidator>();
-            services.AddTransient<IValidator<AppUserAddDto>, AppUserAddValidator>();
-            services.AddTransient<IValidator<AppUserSignInDto>, AppUserSignInValidator>();
-            services.AddTransient<IValidator<GorevAddDto>, GorevAddValidator>();
-            services.AddTransient<IValidator<GorevUpdateDto>, GorevUpdateValidator>();
-            services.AddTransient<IValidator<RaporAddDto>, RaporAddValidator>();
-            services.AddTransient<IValidator<RaporUpdateDto>, RaporUpdateValidator>();
-
+            services.AddValidator();
             services.AddControllersWithViews().AddFluentValidation();
         }
 
@@ -87,7 +50,11 @@ namespace YSKProje.ToDo.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+            app.UseStatusCodePagesWithReExecute("/Home/StatusCode","?code={0}");
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

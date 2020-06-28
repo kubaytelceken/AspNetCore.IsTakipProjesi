@@ -1408,6 +1408,24 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NLog/4.7.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2.11786"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
+      "NLog.Config/4.7.2": {
+        "dependencies": {
+          "NLog": "4.7.2",
+          "NLog.Schema": "4.7.2"
+        }
+      },
+      "NLog.Schema/4.7.2": {},
       "NuGet.Frameworks/4.7.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2570,6 +2588,8 @@
           "EPPlus": "5.1.2",
           "FastMember": "1.5.0",
           "FluentValidation.AspNetCore": "8.6.2",
+          "NLog": "4.7.2",
+          "NLog.Config": "4.7.2",
           "YSKProje.ToDo.DTO": "1.0.0",
           "YSKProje.ToDo.DataAccess": "1.0.0",
           "iTextSharp.LGPLv2.Core": "1.6.7"
@@ -4733,6 +4753,27 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "NLog/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tfZNTOYr0TwvJNrXsJsVdZPSgIpYN1rXHnAZAadeaIbz+v18agNCCxgZXnXQqNKNizkogJ68zYTNKavyQFWwrg==",
+      "path": "nlog/4.7.2",
+      "hashPath": "nlog.4.7.2.nupkg.sha512"
+    },
+    "NLog.Config/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uwrVTjkH9oq65PdHJXrJaIgcmaW3IZB3d8ZowdWf1v0Oq4aSbHlUZW9YDPqAHB+sGIUr/DOr2efIURxsSZnt2w==",
+      "path": "nlog.config/4.7.2",
+      "hashPath": "nlog.config.4.7.2.nupkg.sha512"
+    },
+    "NLog.Schema/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jm/nujpU6oVxrwS/3CA1eSGFckTB7ArBAoR9V9Hus3lve5G0X5o+dsk7oGH1nqRoDTUirPtB2vozW7d43TFgNQ==",
+      "path": "nlog.schema/4.7.2",
+      "hashPath": "nlog.schema.4.7.2.nupkg.sha512"
     },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
